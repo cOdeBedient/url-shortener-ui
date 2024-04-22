@@ -59,7 +59,15 @@ describe('empty spec', () => {
     .get('form').get("input[name='Title']").type("Sink Shot").should("have.value", "Sink Shot")
     .get('form').get("input[name='url']").type("https://unsplash.com/photos/a-kitchen-with-a-sink-stove-dishwasher-and-a-window-e6lBLRDczqM")
     .should("have.value", "https://unsplash.com/photos/a-kitchen-with-a-sink-stove-dishwasher-and-a-window-e6lBLRDczqM")
+    .get('form').contains('button', 'Shorten Please!')
+    .click()
 
+    .get('section').children().should('have.length', 4)
+    .get("section").children().last().contains('h3', 'Sink Shot')
+    .get("section").children().last().contains('a', 'http://localhost:3001/useshorturl/4')
+    .get("section").children().last().contains('p', 'https://unsplash.com/photos/a-kitchen-with-a-sink-stove-dishwasher-and-a-window-e6lBLRDczqM') 
 
+    .get('form').get("input[name='Title']").should("have.value", "")
+    .get('form').get("input[name='url']").should("have.value", "")
   })
 })
