@@ -12,16 +12,17 @@ function App () {
     .then(data => {
       setUrls(data.urls)
     })
+    .catch(err => console.log(err.message))
   }, [])
 
   function addUrl(newUrl) {
     postUrl(newUrl)
     .then(data => {
-      console.log('newUrl from post', data)
       setUrls((prev) => {
         return [...prev, data]
       })
     })
+    .catch(err => console.log(err.message))
   }
 
   return (

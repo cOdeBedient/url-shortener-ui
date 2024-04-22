@@ -30,6 +30,7 @@ function UrlForm({ addUrl }) {
   return (
     <form>
       <input
+        required
         type='text'
         placeholder='Title...'
         name='Title'
@@ -38,6 +39,7 @@ function UrlForm({ addUrl }) {
       />
 
       <input
+        required
         type='text'
         placeholder='URL to Shorten...'
         name='url'

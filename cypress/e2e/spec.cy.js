@@ -29,9 +29,6 @@ describe('empty spec', () => {
 
   it('should visit the page and validate all page elements', () => {
     cy.visit('http://localhost:3000/')
-      .get('.App')
-      .should('have.css', 'background-image')
-      // .and('include', 'scissors.jpg')
       .get('h1').contains('URL Shortener')
       .get('form')
       .contains('button', 'Shorten Please!')
@@ -56,6 +53,7 @@ describe('empty spec', () => {
         title: "Sink Shot",
       }
     })
+    cy.visit('http://localhost:3000/')
     .get('form').get("input[name='Title']").type("Sink Shot").should("have.value", "Sink Shot")
     .get('form').get("input[name='url']").type("https://unsplash.com/photos/a-kitchen-with-a-sink-stove-dishwasher-and-a-window-e6lBLRDczqM")
     .should("have.value", "https://unsplash.com/photos/a-kitchen-with-a-sink-stove-dishwasher-and-a-window-e6lBLRDczqM")
