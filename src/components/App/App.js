@@ -12,7 +12,7 @@ function App () {
     .then(data => {
       setUrls(data.urls)
     })
-  })
+  }, [])
 
   function addUrl(newUrl) {
     postUrl(newUrl)
