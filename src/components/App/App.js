@@ -8,7 +8,10 @@ function App () {
   const [urls, setUrls] = useState([]);
 
   useEffect(() => {
-
+    getUrls()
+    .then(data => {
+      setUrls(data.urls)
+    })
   })
 
   return (

@@ -22,9 +22,6 @@ function UrlForm() {
     }
   }
 
-  console.log("title", title)
-  console.log("url", urlToShorten)
-
   return (
     <form>
       <input
