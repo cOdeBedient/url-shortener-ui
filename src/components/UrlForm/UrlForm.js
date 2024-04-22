@@ -14,22 +14,33 @@ function UrlForm() {
     setUrlToShorten('');
   }
 
+  const handleChange = (e) => {
+    if(e.target.name === "Title") {
+      setTitle(e.target.value)
+    } else {
+      setUrlToShorten(e.target.value)
+    }
+  }
+
+  console.log("title", title)
+  console.log("url", urlToShorten)
+
   return (
     <form>
       <input
         type='text'
         placeholder='Title...'
-        name='title'
+        name='Title'
         value={title}
-        // onChange={e => }
+        onChange={e => handleChange(e)}
       />
 
       <input
         type='text'
         placeholder='URL to Shorten...'
-        name='title'
-        value={title}
-        // onChange={e => }
+        name='url'
+        value={urlToShorten}
+        onChange={e => handleChange(e)}
       />
 
       <button onClick={e => handleSubmit(e)}>
