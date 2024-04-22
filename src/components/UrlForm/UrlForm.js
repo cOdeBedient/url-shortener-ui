@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 
-function UrlForm() {
+function UrlForm({ addUrl }) {
   const [title, setTitle] = useState('');
   const [urlToShorten, setUrlToShorten] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
+    const newUrl = {
+      long_url: urlToShorten,
+      title: title
+    }
+    addUrl(newUrl);
     clearInputs();
   }
 
