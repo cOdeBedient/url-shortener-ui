@@ -17,6 +17,7 @@ function App () {
   function addUrl(newUrl) {
     postUrl(newUrl)
     .then(data => {
+      console.log('newUrl from post', data)
       setUrls((prev) => {
         return [...prev, data]
       })
